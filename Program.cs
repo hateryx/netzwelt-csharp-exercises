@@ -385,21 +385,20 @@ List<int> J_test_case_result_2 = SortedMergedList(J_test_2_input_1, J_test_2_inp
 List<int> J_test_case_result_3 = SortedMergedList(J_test_3_input_1, J_test_3_input_2);
 
 
-Console.WriteLine(string.Join(", ", J_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
-Console.WriteLine(string.Join(", ", J_test_case_result_2)); // should be: A, B, C, 100, 20, 31
-Console.WriteLine(string.Join(", ", J_test_case_result_3)); // should be: -4, -2, 0, 2, 4
+// Console.WriteLine(string.Join(", ", J_test_case_result_1)); // should be: 1, 2, 3, 4, 5, 6, 7, 8, 8, 9, 11, 11, 21, 22, 44, 55, 86, 97, 119, 133
+// Console.WriteLine(string.Join(", ", J_test_case_result_2)); // should be: -331, -323, -322, -231, -121, -51, -43, -35, -34, -21
+// Console.WriteLine(string.Join(", ", J_test_case_result_3)); // should be: -73, -64, -62, -55, -54, -42, -38, -4, -1, -1, 0, 0, 2, 4, 5, 11, 14, 34, 45, 62, 73, 635
 
 
 // K. Write a function that rotates a list by k elements. 
 // For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
 
-static List<int> RotateList(List<int> arr, int k)
+static List<int> RotatedList(List<int> arr, int k)
 {
-
     int i = 0;
     while (i < k)
     {
-        int dummy = arr[i];
+        int dummy = arr[0];
         arr.Remove(dummy);
         arr.Add(dummy);
         i++;
@@ -408,5 +407,17 @@ static List<int> RotateList(List<int> arr, int k)
     return arr;
 }
 
+List<int> K_test_1_input = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
+List<int> K_test_2_input = new List<int> { 1, 2, 3, 4, 5, 6 };
+List<int> K_test_3_input = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
+
+List<int> K_test_case_result_1 = RotatedList(K_test_1_input, 3);
+List<int> K_test_case_result_2 = RotatedList(K_test_2_input, 2);
+List<int> K_test_case_result_3 = RotatedList(K_test_3_input, 7);
+
+
+Console.WriteLine(string.Join(", ", K_test_case_result_1)); //should be 4, 5, 6, 7, 8, 9, 11, 1, 2, 3
+Console.WriteLine(string.Join(", ", K_test_case_result_2)); //should be 3, 4, 5, 6, 1, 2
+Console.WriteLine(string.Join(", ", K_test_case_result_3)); //should be 1, 2, 3, 4, 5, 6, 7
 
 // L. Write a function that takes a number and returns a list of its digits. So for 2342 it should return [2,3,4,2].
