@@ -171,6 +171,74 @@ List<int> E_test_1 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
 List<int> E_test_2 = new List<int> { -1, -2, -3, -4, -5 };
 List<int> E_test_3 = new List<int> { -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 };
 
-Console.WriteLine(RunningTotal(E_test_1));
-Console.WriteLine(RunningTotal(E_test_2));
-Console.WriteLine(RunningTotal(E_test_3));
+// Console.WriteLine(RunningTotal(E_test_1));
+// Console.WriteLine(RunningTotal(E_test_2));
+// Console.WriteLine(RunningTotal(E_test_3));
+
+
+
+
+// F.  Write three functions that compute the sum of the numbers in a list: using a for-loop, a while-loop and recursion.
+// (Subject to availability of these constructs in your language of choice.)
+
+
+// using for-loop
+
+static int SumViaForLoop(List<int> arr)
+{
+    int total_sum_so_far = 0;
+
+    for (int i = 0; i < arr.Count; i++)
+    {
+        total_sum_so_far += arr[i];
+    }
+
+    return total_sum_so_far;
+}
+
+// Console.WriteLine(SumViaForLoop(E_test_1));
+// Console.WriteLine(SumViaForLoop(E_test_2));
+// Console.WriteLine(SumViaForLoop(E_test_3));
+
+// using while-loop
+
+static int SumViaWhileLoop(List<int> arr)
+{
+    int total_sum_so_far = 0;
+
+    int i = 0;
+    while (i < arr.Count)
+    {
+        total_sum_so_far += arr[i];
+        i++;
+    }
+
+    return total_sum_so_far;
+}
+
+// Console.WriteLine(SumViaWhileLoop(E_test_1));
+// Console.WriteLine(SumViaWhileLoop(E_test_2));
+// Console.WriteLine(SumViaWhileLoop(E_test_3));
+
+
+// using recursion
+
+static int SumViaRecursion(List<int> arr)
+{
+    if (arr.Count == 0)
+    {
+        return 0;
+    }
+
+    int currentNumToSum = arr[0];
+
+    List<int> remainingListToSum = arr.GetRange(1, arr.Count - 1);
+    int remainingSum = SumViaRecursion(remainingListToSum);
+
+    return currentNumToSum + remainingSum;
+}
+
+
+Console.WriteLine(SumViaRecursion(E_test_1));
+Console.WriteLine(SumViaRecursion(E_test_2));
+Console.WriteLine(SumViaRecursion(E_test_3));
