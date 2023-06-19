@@ -56,6 +56,7 @@ static int LargestElement(List<int> arr)
     return largest;
 }
 
+//Test cases
 List<int> A_test_1 = new List<int> { 1, 2, 8, 4, 5 };
 List<int> A_test_2 = new List<int> { 100, 2, 8, 99, 5 };
 List<int> A_test_3 = new List<int> { -2, -20, -8, -1, -50 };
@@ -87,9 +88,31 @@ List<int> reversed_1 = ReverseList(A_test_1);
 List<int> reversed_2 = ReverseList(A_test_2);
 List<int> reversed_3 = ReverseList(A_test_3);
 
-Console.WriteLine(string.Join(", ", reversed_1));
-Console.WriteLine(string.Join(", ", reversed_2));
-Console.WriteLine(string.Join(", ", reversed_3));
+// Console.WriteLine(string.Join(", ", reversed_1));
+// Console.WriteLine(string.Join(", ", reversed_2));
+// Console.WriteLine(string.Join(", ", reversed_3));
+
+//Write a function that checks whether an element occurs in a list.
+
+static bool isElementPresent(int target, List<int> arr)
+{
+    int i = 0;
+    while (i < arr.Count)
+    {
+        if (target == arr[i])
+        {
+            return true;
+        }
+        i++;
+    }
+
+    return false;
+}
+
+
+Console.WriteLine(isElementPresent(1, A_test_1)); // true
+Console.WriteLine(isElementPresent(-1, A_test_1)); // false
+Console.WriteLine(isElementPresent(2000, A_test_2)); // false
 
 
 
