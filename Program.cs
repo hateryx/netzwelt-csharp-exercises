@@ -354,5 +354,20 @@ Console.WriteLine(string.Join(", ", I_test_case_result_2)); // should be: A, B, 
 Console.WriteLine(string.Join(", ", I_test_case_result_3)); // should be: -4, -2, 0, 2, 4
 
 
-// Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. 
+// J. Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. 
 // You can do this quicker than concatenating them followed by a sort.
+
+static List<int> SortedMergedList(List<int> first_arr, List<int> second_arr)
+{
+    int i = 0;
+    while (i < second_arr.Count)
+    {
+        first_arr.Add(second_arr[i]);
+        i++;
+    }
+
+    first_arr.Sort();
+
+    return first_arr;
+}
+
