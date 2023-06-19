@@ -388,3 +388,25 @@ List<int> J_test_case_result_3 = SortedMergedList(J_test_3_input_1, J_test_3_inp
 Console.WriteLine(string.Join(", ", J_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
 Console.WriteLine(string.Join(", ", J_test_case_result_2)); // should be: A, B, C, 100, 20, 31
 Console.WriteLine(string.Join(", ", J_test_case_result_3)); // should be: -4, -2, 0, 2, 4
+
+
+// K. Write a function that rotates a list by k elements. 
+// For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
+
+static List<int> RotateList(List<int> arr, int k)
+{
+
+    int i = 0;
+    while (i < k)
+    {
+        int dummy = arr[i];
+        arr.Remove(dummy);
+        arr.Add(dummy);
+        i++;
+    }
+
+    return arr;
+}
+
+
+// L. Write a function that takes a number and returns a list of its digits. So for 2342 it should return [2,3,4,2].
