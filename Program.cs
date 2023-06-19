@@ -267,22 +267,23 @@ static List<Object> ConcatenateTwoLists(List<string> first_arr, List<int> second
     return concatenated_list;
 }
 
-List<string> G_test_1_input_1 = "Hello".Select(chr => chr.ToString()).ToList();
-List<string> G_test_2_input_1 = "ABC".Select(chr => chr.ToString()).ToList();
-List<string> G_test_3_input_1 = "aaaa".Select(chr => chr.ToString()).ToList();
 
-List<int> G_test_1_input_2 = new List<int> { 100, 20, 31 };
-List<int> G_test_2_input_2 = new List<int> { 1, 2, 3 };
-List<int> G_test_3_input_2 = new List<int> { -1 };
+List<string> H_test_1_input_1 = "Hello".Select(chr => chr.ToString()).ToList();
+List<string> H_test_2_input_1 = "ABC".Select(chr => chr.ToString()).ToList();
+List<string> H_test_3_input_1 = "aaaa".Select(chr => chr.ToString()).ToList();
 
-List<Object> G_test_case_result_1 = ConcatenateTwoLists(G_test_1_input_1, G_test_1_input_2);
-List<Object> G_test_case_result_2 = ConcatenateTwoLists(G_test_2_input_1, G_test_1_input_2);
-List<Object> G_test_case_result_3 = ConcatenateTwoLists(G_test_3_input_1, G_test_1_input_2);
+List<int> H_test_1_input_2 = new List<int> { 100, 20, 31 };
+List<int> H_test_2_input_2 = new List<int> { 1, 2, 3 };
+List<int> H_test_3_input_2 = new List<int> { -1 };
+
+List<Object> H_test_case_result_1 = ConcatenateTwoLists(H_test_1_input_1, H_test_1_input_2);
+List<Object> H_test_case_result_2 = ConcatenateTwoLists(H_test_2_input_1, H_test_2_input_2);
+List<Object> H_test_case_result_3 = ConcatenateTwoLists(H_test_3_input_1, H_test_3_input_2);
 
 
-Console.WriteLine(string.Join(", ", G_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
-Console.WriteLine(string.Join(", ", G_test_case_result_2)); // should be: A, B, C, 100, 20, 31
-Console.WriteLine(string.Join(", ", G_test_case_result_3)); // should be: -4, -2, 0, 2, 4
+// Console.WriteLine(string.Join(", ", H_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
+// Console.WriteLine(string.Join(", ", H_test_case_result_2)); // should be: A, B, C, 100, 20, 31
+// Console.WriteLine(string.Join(", ", H_test_case_result_3)); // should be: -4, -2, 0, 2, 4
 
 
 // I. Write a function that combines two lists by alternately taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
@@ -291,7 +292,7 @@ static List<object> AlternatingCombination(List<string> first_arr, List<int> sec
 {
     List<object> answer = new List<object>();
 
-    int n = first_arr.Count() + second_arr.Count();
+    int n = first_arr.Count + second_arr.Count;
 
     int tracker_1 = 0;
     int tracker_2 = 0;
@@ -301,17 +302,57 @@ static List<object> AlternatingCombination(List<string> first_arr, List<int> sec
     {
         if (i % 2 == 0)
         {
-            answer.Add(first_arr[tracker_1]);
-            tracker_1++;
+            if (tracker_1 < first_arr.Count)
+            {
+                answer.Add(first_arr[tracker_1]);
+                tracker_1++;
+            }
+
         }
         else
         {
-            answer.Add(second_arr[tracker_2]);
-            tracker_2++;
+            if (tracker_2 < second_arr.Count)
+            {
+                answer.Add(second_arr[tracker_2]);
+                tracker_2++;
+            }
         }
         i++;
+    }
+
+    while (tracker_1 < first_arr.Count)
+    {
+        answer.Add(first_arr[tracker_1]);
+        tracker_1++;
+    }
+
+    while (tracker_2 < second_arr.Count)
+    {
+        answer.Add(second_arr[tracker_2]);
+        tracker_2++;
     }
 
     return answer;
 }
 
+List<string> I_test_1_input_1 = "Hello".Select(chr => chr.ToString()).ToList();
+List<string> I_test_2_input_1 = "ABC".Select(chr => chr.ToString()).ToList();
+List<string> I_test_3_input_1 = "aaaaaa".Select(chr => chr.ToString()).ToList();
+
+List<int> I_test_1_input_2 = new List<int> { 100, 20, 31, 45, 65, 77 };
+List<int> I_test_2_input_2 = new List<int> { 1, 2, 3 };
+List<int> I_test_3_input_2 = new List<int> { -1 };
+
+
+List<Object> I_test_case_result_1 = AlternatingCombination(I_test_1_input_1, I_test_1_input_2);
+List<Object> I_test_case_result_2 = AlternatingCombination(I_test_2_input_1, I_test_2_input_2);
+List<Object> I_test_case_result_3 = AlternatingCombination(I_test_3_input_1, I_test_3_input_2);
+
+
+Console.WriteLine(string.Join(", ", I_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
+Console.WriteLine(string.Join(", ", I_test_case_result_2)); // should be: A, B, C, 100, 20, 31
+Console.WriteLine(string.Join(", ", I_test_case_result_3)); // should be: -4, -2, 0, 2, 4
+
+
+// Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. 
+// You can do this quicker than concatenating them followed by a sort.
