@@ -248,3 +248,37 @@ Console.WriteLine(SumViaRecursion(E_test_3));
 // (This question is tricky if your programming language makes it difficult to pass functions as arguments.)
 
 
+// H. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
+
+static List<Object> ConcatenateTwoLists(List<string> first_arr, List<int> second_arr)
+{
+    List<object> concatenated_list = new List<Object>();
+
+    foreach (string item in first_arr)
+    {
+        concatenated_list.Add(item);
+    }
+
+    foreach (int item in second_arr)
+    {
+        concatenated_list.Add(item);
+    }
+
+    return concatenated_list;
+}
+
+List<string> G_test_1_input_1 = "Hello".Select(chr => chr.ToString()).ToList();
+List<string> G_test_2_input_1 = "ABC".Select(chr => chr.ToString()).ToList();
+
+List<int> G_test_1_input_1 = new List<int> { 100, 20, 31 };
+List<int> G_test_2_input_2 = new List<int> { 1, 2, 3 };
+
+List<Object> odd_list_test_1 = ConcatenateTwoLists(G_test_1_input_1, );
+List<Object> odd_list_test_2 = ConcatenateTwoLists(G_test_1_input_2);
+// List<int> odd_list_test_3 = OddList(C_test_3);
+
+// Console.WriteLine(string.Join(", ", odd_list_test_1)); // should be: 2, 4, 6, 8, 11
+// Console.WriteLine(string.Join(", ", odd_list_test_2)); // should be: 13, 17
+// Console.WriteLine(string.Join(", ", odd_list_test_3)); // should be: -4, -2, 0, 2, 4
+
+
