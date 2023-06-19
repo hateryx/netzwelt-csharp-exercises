@@ -92,6 +92,7 @@ List<int> reversed_3 = ReverseList(A_test_3);
 // Console.WriteLine(string.Join(", ", reversed_2));
 // Console.WriteLine(string.Join(", ", reversed_3));
 
+
 //Write a function that checks whether an element occurs in a list.
 
 static bool isElementPresent(int target, List<int> arr)
@@ -110,9 +111,41 @@ static bool isElementPresent(int target, List<int> arr)
 }
 
 
-Console.WriteLine(isElementPresent(1, A_test_1)); // true
-Console.WriteLine(isElementPresent(-1, A_test_1)); // false
-Console.WriteLine(isElementPresent(2000, A_test_2)); // false
+// Console.WriteLine(isElementPresent(1, A_test_1)); // true
+// Console.WriteLine(isElementPresent(-1, A_test_1)); // false
+// Console.WriteLine(isElementPresent(2000, A_test_2)); // false
 
 
 
+// Write a function that returns the elements on odd positions in a list.
+
+static List<int> OddList(List<int> arr)
+{
+
+    List<int> odd_list = new List<int>();
+
+    int i = 0;
+    while (i < arr.Count)
+    {
+        if (i % 2 == 1)
+        {
+            odd_list.Add(arr[i]);
+        }
+        i++;
+    }
+
+    return odd_list;
+}
+
+List<int> C_test_1 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
+List<int> C_test_2 = new List<int> { 11, 13, 15, 17, 19 };
+List<int> C_test_3 = new List<int> { -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 };
+
+
+List<int> odd_list_test_1 = OddList(C_test_1);
+List<int> odd_list_test_2 = OddList(C_test_2);
+List<int> odd_list_test_3 = OddList(C_test_3);
+
+Console.WriteLine(string.Join(", ", odd_list_test_1)); // should be: 2, 4, 6, 8, 11
+Console.WriteLine(string.Join(", ", odd_list_test_2)); // should be: 13, 17
+Console.WriteLine(string.Join(", ", odd_list_test_3)); // should be: -4, -2, 0, 2, 4
