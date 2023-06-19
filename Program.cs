@@ -60,8 +60,36 @@ List<int> A_test_1 = new List<int> { 1, 2, 8, 4, 5 };
 List<int> A_test_2 = new List<int> { 100, 2, 8, 99, 5 };
 List<int> A_test_3 = new List<int> { -2, -20, -8, -1, -50 };
 
-Console.WriteLine(LargestElement(A_test_1));
-Console.WriteLine(LargestElement(A_test_2));
-Console.WriteLine(LargestElement(A_test_3));
+// Console.WriteLine(LargestElement(A_test_1));
+// Console.WriteLine(LargestElement(A_test_2));
+// Console.WriteLine(LargestElement(A_test_3));
+
+
+// Write function that reverses a list, preferably in place.
+
+
+static List<int> ReverseList(List<int> arr)
+{
+
+    List<int> reversed = new List<int>();
+
+    int i = arr.Count - 1;
+    while (i >= 0)
+    {
+        reversed.Add(arr[i]);
+        i--;
+    }
+
+    return reversed;
+}
+
+List<int> reversed_1 = ReverseList(A_test_1);
+List<int> reversed_2 = ReverseList(A_test_2);
+List<int> reversed_3 = ReverseList(A_test_3);
+
+Console.WriteLine(string.Join(", ", reversed_1));
+Console.WriteLine(string.Join(", ", reversed_2));
+Console.WriteLine(string.Join(", ", reversed_3));
+
 
 
