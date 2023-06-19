@@ -239,9 +239,9 @@ static int SumViaRecursion(List<int> arr)
 }
 
 
-Console.WriteLine(SumViaRecursion(E_test_1));
-Console.WriteLine(SumViaRecursion(E_test_2));
-Console.WriteLine(SumViaRecursion(E_test_3));
+// Console.WriteLine(SumViaRecursion(E_test_1));
+// Console.WriteLine(SumViaRecursion(E_test_2));
+// Console.WriteLine(SumViaRecursion(E_test_3));
 
 
 // G. Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares. The perfect squares can be found by multiplying each natural number with itself. The first few perfect squares are 1*1= 1, 2*2=4, 3*3=9, 4*4=16. Twelve for example is not a perfect square because there is no natural number m so that m*m=12. 
@@ -269,16 +269,21 @@ static List<Object> ConcatenateTwoLists(List<string> first_arr, List<int> second
 
 List<string> G_test_1_input_1 = "Hello".Select(chr => chr.ToString()).ToList();
 List<string> G_test_2_input_1 = "ABC".Select(chr => chr.ToString()).ToList();
+List<string> G_test_3_input_1 = "aaaa".Select(chr => chr.ToString()).ToList();
 
-List<int> G_test_1_input_1 = new List<int> { 100, 20, 31 };
+List<int> G_test_1_input_2 = new List<int> { 100, 20, 31 };
 List<int> G_test_2_input_2 = new List<int> { 1, 2, 3 };
+List<int> G_test_3_input_2 = new List<int> { -1 };
 
-List<Object> odd_list_test_1 = ConcatenateTwoLists(G_test_1_input_1, );
-List<Object> odd_list_test_2 = ConcatenateTwoLists(G_test_1_input_2);
-// List<int> odd_list_test_3 = OddList(C_test_3);
+List<Object> G_test_case_result_1 = ConcatenateTwoLists(G_test_1_input_1, G_test_1_input_2);
+List<Object> G_test_case_result_2 = ConcatenateTwoLists(G_test_2_input_1, G_test_1_input_2);
+List<Object> G_test_case_result_3 = ConcatenateTwoLists(G_test_3_input_1, G_test_1_input_2);
 
-// Console.WriteLine(string.Join(", ", odd_list_test_1)); // should be: 2, 4, 6, 8, 11
-// Console.WriteLine(string.Join(", ", odd_list_test_2)); // should be: 13, 17
-// Console.WriteLine(string.Join(", ", odd_list_test_3)); // should be: -4, -2, 0, 2, 4
 
+Console.WriteLine(string.Join(", ", G_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
+Console.WriteLine(string.Join(", ", G_test_case_result_2)); // should be: A, B, C, 100, 20, 31
+Console.WriteLine(string.Join(", ", G_test_case_result_3)); // should be: -4, -2, 0, 2, 4
+
+
+// H. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
 
