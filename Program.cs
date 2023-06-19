@@ -349,9 +349,9 @@ List<Object> I_test_case_result_2 = AlternatingCombination(I_test_2_input_1, I_t
 List<Object> I_test_case_result_3 = AlternatingCombination(I_test_3_input_1, I_test_3_input_2);
 
 
-Console.WriteLine(string.Join(", ", I_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
-Console.WriteLine(string.Join(", ", I_test_case_result_2)); // should be: A, B, C, 100, 20, 31
-Console.WriteLine(string.Join(", ", I_test_case_result_3)); // should be: -4, -2, 0, 2, 4
+// Console.WriteLine(string.Join(", ", I_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
+// Console.WriteLine(string.Join(", ", I_test_case_result_2)); // should be: A, B, C, 100, 20, 31
+// Console.WriteLine(string.Join(", ", I_test_case_result_3)); // should be: -4, -2, 0, 2, 4
 
 
 // J. Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. 
@@ -371,3 +371,20 @@ static List<int> SortedMergedList(List<int> first_arr, List<int> second_arr)
     return first_arr;
 }
 
+List<int> J_test_1_input_1 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
+List<int> J_test_1_input_2 = new List<int> { 21, 22, 133, 44, 55, 86, 97, 8, 119, 11 };
+
+List<int> J_test_2_input_1 = new List<int> { -121, -21, -331, -34, -35 };
+List<int> J_test_2_input_2 = new List<int> { -231, -322, -323, -43, -51 };
+
+List<int> J_test_3_input_1 = new List<int> { -54, -4, -73, -42, -1, 0, 11, 2, 73, 45, 5 };
+List<int> J_test_3_input_2 = new List<int> { -55, -64, -38, -62, -1, 0, 14, 62, 34, 4, 635 };
+
+List<int> J_test_case_result_1 = SortedMergedList(J_test_1_input_1, J_test_1_input_2);
+List<int> J_test_case_result_2 = SortedMergedList(J_test_2_input_1, J_test_2_input_2);
+List<int> J_test_case_result_3 = SortedMergedList(J_test_3_input_1, J_test_3_input_2);
+
+
+Console.WriteLine(string.Join(", ", J_test_case_result_1)); // should be: H, e, l, l, o, 100, 20, 31
+Console.WriteLine(string.Join(", ", J_test_case_result_2)); // should be: A, B, C, 100, 20, 31
+Console.WriteLine(string.Join(", ", J_test_case_result_3)); // should be: -4, -2, 0, 2, 4
