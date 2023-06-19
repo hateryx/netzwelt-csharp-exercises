@@ -146,6 +146,24 @@ List<int> odd_list_test_1 = OddList(C_test_1);
 List<int> odd_list_test_2 = OddList(C_test_2);
 List<int> odd_list_test_3 = OddList(C_test_3);
 
-Console.WriteLine(string.Join(", ", odd_list_test_1)); // should be: 2, 4, 6, 8, 11
-Console.WriteLine(string.Join(", ", odd_list_test_2)); // should be: 13, 17
-Console.WriteLine(string.Join(", ", odd_list_test_3)); // should be: -4, -2, 0, 2, 4
+// Console.WriteLine(string.Join(", ", odd_list_test_1)); // should be: 2, 4, 6, 8, 11
+// Console.WriteLine(string.Join(", ", odd_list_test_2)); // should be: 13, 17
+// Console.WriteLine(string.Join(", ", odd_list_test_3)); // should be: -4, -2, 0, 2, 4
+
+
+// Write a function that computes the running total of a list.
+
+static int RunningTotal(List<int> arr)
+{
+    int total_sum_so_far = 0;
+
+    int i = 0;
+    while (i < arr.Count)
+    {
+        total_sum_so_far += arr[i];
+        i++;
+    }
+
+    return total_sum_so_far;
+}
+
