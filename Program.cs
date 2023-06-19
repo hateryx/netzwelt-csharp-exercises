@@ -151,7 +151,7 @@ List<int> odd_list_test_3 = OddList(C_test_3);
 // Console.WriteLine(string.Join(", ", odd_list_test_3)); // should be: -4, -2, 0, 2, 4
 
 
-// Write a function that computes the running total of a list.
+// E.  Write a function that computes the running total of a list.
 
 static int RunningTotal(List<int> arr)
 {
@@ -167,3 +167,10 @@ static int RunningTotal(List<int> arr)
     return total_sum_so_far;
 }
 
+List<int> E_test_1 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
+List<int> E_test_2 = new List<int> { -1, -2, -3, -4, -5 };
+List<int> E_test_3 = new List<int> { -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 };
+
+Console.WriteLine(RunningTotal(E_test_1));
+Console.WriteLine(RunningTotal(E_test_2));
+Console.WriteLine(RunningTotal(E_test_3));
