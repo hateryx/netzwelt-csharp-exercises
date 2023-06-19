@@ -285,5 +285,33 @@ Console.WriteLine(string.Join(", ", G_test_case_result_2)); // should be: A, B, 
 Console.WriteLine(string.Join(", ", G_test_case_result_3)); // should be: -4, -2, 0, 2, 4
 
 
-// H. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
+// I. Write a function that combines two lists by alternately taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+
+static List<object> AlternatingCombination(List<string> first_arr, List<int> second_arr)
+{
+    List<object> answer = new List<object>();
+
+    int n = first_arr.Count() + second_arr.Count();
+
+    int tracker_1 = 0;
+    int tracker_2 = 0;
+
+    int i = 0;
+    while (i < n)
+    {
+        if (i % 2 == 0)
+        {
+            answer.Add(first_arr[tracker_1]);
+            tracker_1++;
+        }
+        else
+        {
+            answer.Add(second_arr[tracker_2]);
+            tracker_2++;
+        }
+        i++;
+    }
+
+    return answer;
+}
 
