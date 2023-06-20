@@ -244,8 +244,12 @@ static int SumViaRecursion(List<int> arr)
 // Console.WriteLine(SumViaRecursion(E_test_3));
 
 
-// G. Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares. The perfect squares can be found by multiplying each natural number with itself. The first few perfect squares are 1*1= 1, 2*2=4, 3*3=9, 4*4=16. Twelve for example is not a perfect square because there is no natural number m so that m*m=12. 
+// G. Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares. The perfect squares can be found by multiplying each natural number with itself. 
+// The first few perfect squares are 1*1= 1, 2*2=4, 3*3=9, 4*4=16. 
+// Twelve for example is not a perfect square because there is no natural number m so that m*m=12. 
 // (This question is tricky if your programming language makes it difficult to pass functions as arguments.)
+
+
 
 
 // H. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
@@ -416,8 +420,38 @@ List<int> K_test_case_result_2 = RotatedList(K_test_2_input, 2);
 List<int> K_test_case_result_3 = RotatedList(K_test_3_input, 7);
 
 
-Console.WriteLine(string.Join(", ", K_test_case_result_1)); //should be 4, 5, 6, 7, 8, 9, 11, 1, 2, 3
-Console.WriteLine(string.Join(", ", K_test_case_result_2)); //should be 3, 4, 5, 6, 1, 2
-Console.WriteLine(string.Join(", ", K_test_case_result_3)); //should be 1, 2, 3, 4, 5, 6, 7
+// Console.WriteLine(string.Join(", ", K_test_case_result_1)); //should be 4, 5, 6, 7, 8, 9, 11, 1, 2, 3
+// Console.WriteLine(string.Join(", ", K_test_case_result_2)); //should be 3, 4, 5, 6, 1, 2
+// Console.WriteLine(string.Join(", ", K_test_case_result_3)); //should be 1, 2, 3, 4, 5, 6, 7
 
-// L. Write a function that takes a number and returns a list of its digits. So for 2342 it should return [2,3,4,2].
+// L. Write a function that takes a number and returns a list of its digits. 
+// So for 2342 it should return [2,3,4,2].
+
+static List<int> NumToDigitList(int input){
+    
+    List<int> answer = new List<int>();
+
+    int dummy = input;
+    int mod = 0;
+    
+    while (dummy  > 0)
+    {
+        mod = dummy % 10;
+        answer.Add(mod);
+        dummy = dummy / 10;
+    }
+
+    return ReverseList(answer);
+}
+
+int L_test_1_input = 1999;
+int L_test_2_input = 211;
+int L_test_3_input = 1000;
+
+List<int> L_test_case_result_1 = NumToDigitList(L_test_1_input);
+List<int> L_test_case_result_2 = NumToDigitList(L_test_2_input);
+List<int> L_test_case_result_3 = NumToDigitList(L_test_3_input);
+
+// Console.WriteLine(string.Join(", ", L_test_case_result_1)); //should be 4, 5, 6, 7, 8, 9, 11, 1, 2, 3
+// Console.WriteLine(string.Join(", ", L_test_case_result_2)); //should be 3, 4, 5, 6, 1, 2
+// Console.WriteLine(string.Join(", ", L_test_case_result_3)); //should be 1, 2, 3, 4, 5, 6, 7
