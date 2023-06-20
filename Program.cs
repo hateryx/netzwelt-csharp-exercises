@@ -37,7 +37,7 @@ using System;
 
 
 
-//Write a function that returns the largest element in a list.
+//A.  Write a function that returns the largest element in a list.
 
 static int LargestElement(List<int> arr)
 {
@@ -66,8 +66,7 @@ List<int> A_test_3 = new List<int> { -2, -20, -8, -1, -50 };
 // Console.WriteLine(LargestElement(A_test_3));
 
 
-// Write function that reverses a list, preferably in place.
-
+// B. Write function that reverses a list, preferably in place.
 
 static List<int> ReverseList(List<int> arr)
 {
@@ -93,7 +92,7 @@ List<int> reversed_3 = ReverseList(A_test_3);
 // Console.WriteLine(string.Join(", ", reversed_3));
 
 
-//Write a function that checks whether an element occurs in a list.
+//C. Write a function that checks whether an element occurs in a list.
 
 static bool isElementPresent(int target, List<int> arr)
 {
@@ -117,7 +116,7 @@ static bool isElementPresent(int target, List<int> arr)
 
 
 
-// Write a function that returns the elements on odd positions in a list.
+// D. Write a function that returns the elements on odd positions in a list.
 
 static List<int> OddList(List<int> arr)
 {
@@ -178,8 +177,8 @@ List<int> E_test_3 = new List<int> { -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 };
 
 
 
-// F.  Write three functions that compute the sum of the numbers in a list: using a for-loop, a while-loop and recursion.
-// (Subject to availability of these constructs in your language of choice.)
+// F.   Write three functions that compute the sum of the numbers in a list: using a for-loop, a while-loop and recursion.
+//      (Subject to availability of these constructs in your language of choice.)
 
 
 // using for-loop
@@ -244,12 +243,27 @@ static int SumViaRecursion(List<int> arr)
 // Console.WriteLine(SumViaRecursion(E_test_3));
 
 
-// G. Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares. The perfect squares can be found by multiplying each natural number with itself. 
-// The first few perfect squares are 1*1= 1, 2*2=4, 3*3=9, 4*4=16. 
-// Twelve for example is not a perfect square because there is no natural number m so that m*m=12. 
-// (This question is tricky if your programming language makes it difficult to pass functions as arguments.)
+// G.   Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares. The perfect squares can be found by multiplying each natural number with itself. 
+//      The first few perfect squares are 1*1= 1, 2*2=4, 3*3=9, 4*4=16. 
+//      Twelve for example is not a perfect square because there is no natural number m so that m*m=12. 
+//      (This question is tricky if your programming language makes it difficult to pass functions as arguments.)
 
-
+static void on_all(List<int> arr)
+{
+    arr.ForEach((int num) => {
+        int tracker = 1;
+        int limit = 20;
+        while (tracker < num){
+            if (tracker*tracker <= num && tracker <= limit)
+            {
+                Console.WriteLine(tracker*tracker);
+            }
+            tracker++;
+        }
+    });
+}
+List<int> test = new List<int> {20000, 100, 20};
+on_all(test);
 
 
 // H. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
