@@ -251,22 +251,26 @@ static int SumViaRecursion(List<int> arr)
 static void on_all(List<int> arr)
 {
     arr.ForEach((int num) => {
+        List<int> perfect_squares = new List<int>();
+
         int tracker = 1;
         int limit = 20;
         while (tracker < num){
             if (tracker*tracker <= num && tracker <= limit)
             {
-                Console.WriteLine(tracker*tracker);
+                perfect_squares.Add(tracker*tracker);
             }
             tracker++;
         }
+
+        Console.WriteLine(string.Join(", ", perfect_squares));
     });
 }
 List<int> test = new List<int> {20000, 100, 20};
 on_all(test);
 
 
-// H. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
+//      H. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
 
 static List<Object> ConcatenateTwoLists(List<string> first_arr, List<int> second_arr)
 {
@@ -304,7 +308,7 @@ List<Object> H_test_case_result_3 = ConcatenateTwoLists(H_test_3_input_1, H_test
 // Console.WriteLine(string.Join(", ", H_test_case_result_3)); // should be: -4, -2, 0, 2, 4
 
 
-// I. Write a function that combines two lists by alternately taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+// I.     Write a function that combines two lists by alternately taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
 
 static List<object> AlternatingCombination(List<string> first_arr, List<int> second_arr)
 {
@@ -372,8 +376,8 @@ List<Object> I_test_case_result_3 = AlternatingCombination(I_test_3_input_1, I_t
 // Console.WriteLine(string.Join(", ", I_test_case_result_3)); // should be: -4, -2, 0, 2, 4
 
 
-// J. Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. 
-// You can do this quicker than concatenating them followed by a sort.
+// J.   Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. 
+//      You can do this quicker than concatenating them followed by a sort.
 
 static List<int> SortedMergedList(List<int> first_arr, List<int> second_arr)
 {
@@ -408,8 +412,8 @@ List<int> J_test_case_result_3 = SortedMergedList(J_test_3_input_1, J_test_3_inp
 // Console.WriteLine(string.Join(", ", J_test_case_result_3)); // should be: -73, -64, -62, -55, -54, -42, -38, -4, -1, -1, 0, 0, 2, 4, 5, 11, 14, 34, 45, 62, 73, 635
 
 
-// K. Write a function that rotates a list by k elements. 
-// For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
+// K.   Write a function that rotates a list by k elements. 
+//      For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
 
 static List<int> RotatedList(List<int> arr, int k)
 {
@@ -438,8 +442,8 @@ List<int> K_test_case_result_3 = RotatedList(K_test_3_input, 7);
 // Console.WriteLine(string.Join(", ", K_test_case_result_2)); //should be 3, 4, 5, 6, 1, 2
 // Console.WriteLine(string.Join(", ", K_test_case_result_3)); //should be 1, 2, 3, 4, 5, 6, 7
 
-// L. Write a function that takes a number and returns a list of its digits. 
-// So for 2342 it should return [2,3,4,2].
+// L.   Write a function that takes a number and returns a list of its digits. 
+//      So for 2342 it should return [2,3,4,2].
 
 static List<int> NumToDigitList(int input){
     
